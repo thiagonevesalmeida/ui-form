@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-100: #F4FAFA;
+    --primary-300: #DFEBEB;
+    
+    --text-color: #10131C;
+
+    font-size: 62.5%  /*font-size: 10px*/
+}
+
+body {
+    background-color: var(--primary-300);
+    color: var(--text-color);
+    font-size: 1.6rem; 
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    /* place-items: center;  */
+    place-content: center;
+}
+
+body * {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+}
+
+form {
+    background-color: #fff;
+    box-shadow: 0 0 4.8rem rgb(0 0 0 / .1);
+    border-radius: 3.2rem;
+
+    margin: 2rem auto;
+    padding: 3rem 6rem; 
+
+    width: min(73rem, 80%); 
+    display: grid; 
+    place-content: center; 
+}
+
+a {
+    color: var(--text-color);
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset legend {
+    font-size: 2.4rem; 
+    font-family: 'Libre Baskerville';
+}
+
+/* radio */
+.radio-container {
+    background-color: var(--primary-100);
+    padding: 2.4rem;
+
+    border: 1px solid #BBC1C1;
+    border-radius: 1.6rem;
+
+    min-width: 30.0rem; 
+}
+
+.radio-container > div {
+    display: flex;
+    gap: .8rem;
+}
+
+.radio-container input[type="radio"] { 
+    appearance: none; 
+
+    border: 1px solid #BBC1C1;
+    height: 2.8rem;
+    width: 2.8rem;
+    border-radius: 50%;
+    background-color: #fff;
+} 
+
+.radio-container input[type="radio"]:checked { 
+    background-image: radial-gradient(white 35%, black 40%)
+}
+
+.radio-container:not(:has(:checked)) { 
+    opacity: .6; 
+} 
+
+.radio-container label {
+    font-size: 2rem;
+    
+}
+
+.radio-container p {
+    margin-top: 1rem;
+    padding-left: 3.8rem;
+}
+
+legend + .radio-container { 
+    margin-top: 6rem;
+}
+
+.radio-container + .radio-container, 
+.box-container + .box-container {
+    margin-top: 2.4rem;
+}
+
+/* checkbox */
+.box-container {
+    display: flex;
+    gap: .8rem;
+
+    padding-inline: 2rem;
+}
+
+.box-container input[type="checkbox"] {
+    appearance: none;
+    flex-shrink: 0; 
+
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 1px solid #BBC1C1;
+    border-radius: .6rem;
+
+    position: relative;
+}
+
+.box-container input[type="checkbox"]:focus {
+    outline: 2px solid black;
+}
+
+.box-container input[type="checkbox"]:checked::before {
+    content: "✓";
+    font-size: 2.4rem;
+    font-weight: bold;
+
+    position: absolute;
+    top: -0.6rem;
+    left: .4rem;
+    
+}
+
+.box-container lable {
+    margin-top: .4rem;
+}
+
+.radio-container + .box-container {
+    margin-top: 4.8rem; 
+}
+
+button {
+    background-color: #130528;
+    color: #fff;
+
+    padding-block: 2rem; 
+    margin-top: 5.8rem;
+    width: 100%;
+
+    border: none;
+    transition: background .2s;
+}
+
+button:hover {
+    background-color: #210847;
+    filter: brightness(1.2); 
+    cursor: pointer;
+}
+
+small {
+    text-align: center;
+    display: block;
+    margin-top: 2.8rem
+}
+
+
+@media (min-width: 720px) {
+    form {
+        padding: 9rem;
+        width: min(73rem, 87%);
+    }
+
+    fieldset legend {
+        font-size: 3.2rem;
+    }
+
+}
